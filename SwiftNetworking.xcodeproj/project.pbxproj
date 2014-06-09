@@ -10,7 +10,7 @@
 		021E1B041944F5A300FDC37C /* SwiftNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 021E1B031944F5A300FDC37C /* SwiftNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		021E1B0A1944F5A400FDC37C /* SwiftNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 021E1AFE1944F5A300FDC37C /* SwiftNetworking.framework */; };
 		021E1B111944F5A400FDC37C /* SwiftNetworkingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021E1B101944F5A400FDC37C /* SwiftNetworkingTests.swift */; };
-		021E1B1B1944F62D00FDC37C /* SwiftNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021E1B1A1944F62D00FDC37C /* SwiftNetworking.swift */; };
+		021E1B1B1944F62D00FDC37C /* SwiftNetworkingClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021E1B1A1944F62D00FDC37C /* SwiftNetworkingClient.swift */; };
 		021E1B251944FC8200FDC37C /* SwiftNetworking.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 021E1AFE1944F5A300FDC37C /* SwiftNetworking.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 /* End PBXBuildFile section */
 
@@ -44,7 +44,7 @@
 		021E1B091944F5A400FDC37C /* SwiftNetworkingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftNetworkingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		021E1B0F1944F5A400FDC37C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		021E1B101944F5A400FDC37C /* SwiftNetworkingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftNetworkingTests.swift; sourceTree = "<group>"; };
-		021E1B1A1944F62D00FDC37C /* SwiftNetworking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftNetworking.swift; sourceTree = "<group>"; };
+		021E1B1A1944F62D00FDC37C /* SwiftNetworkingClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftNetworkingClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,7 +89,7 @@
 			children = (
 				021E1B031944F5A300FDC37C /* SwiftNetworking.h */,
 				021E1B011944F5A300FDC37C /* Supporting Files */,
-				021E1B1A1944F62D00FDC37C /* SwiftNetworking.swift */,
+				021E1B1A1944F62D00FDC37C /* SwiftNetworkingClient.swift */,
 			);
 			path = SwiftNetworking;
 			sourceTree = "<group>";
@@ -220,7 +220,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				021E1B1B1944F62D00FDC37C /* SwiftNetworking.swift in Sources */,
+				021E1B1B1944F62D00FDC37C /* SwiftNetworkingClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
