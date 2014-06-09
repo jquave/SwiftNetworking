@@ -38,8 +38,10 @@ class SwiftNetworkingClient {
         return SwiftNetworkingClient(path: path, method: "GET")
     }
     
-    class func post(path: String) -> SwiftNetworkingClient {
-        return SwiftNetworkingClient(path: path, method: "POST")
+    class func post(path: String, params: Dictionary<String, String>?) -> SwiftNetworkingClient {
+        var newClient = SwiftNetworkingClient(path: path, method: "POST")
+        newClient.params = params
+        return newClient
     }
     
     func perform() {

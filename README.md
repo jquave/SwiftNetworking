@@ -19,3 +19,10 @@ SwiftNetworkingClient.get("http://example.com").onComplete({result -> Void in
 
 ```
 
+### `POST` Request
+```swift
+SwiftNetworkingClient.post("http://localhost:3000/api/register", params: ["username":"something", "token":"something"] ).onComplete({results -> Void in
+  println(results)
+}).onError({error -> Void in
+  println("Error!")
+})
