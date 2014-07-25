@@ -22,7 +22,7 @@ class SwiftNetworkingClient {
     var deserializationMethod = DeserializationMethod.JSON
     var parameterEncordingMethod = ParameterEncodingMethod.Form
     
-    var completionHandler: ((AnyObject) -> (Void))?
+    var completionHandler: ((String) -> (Void))?
     var errorCompletionHandler: ((NSError) -> (Void))?
     
     var path: String?
@@ -68,7 +68,9 @@ class SwiftNetworkingClient {
                 }
             }
             else {
-                var error: NSError?
+                var str = NSString(data: data, encoding: NSUTF8StringEncoding)
+                self.completionHandler!(str)
+                /*var error: NSError?
                 var jsonResult = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: &error) as? NSDictionary
                 
                 // Now send the JSON result to our delegate object
@@ -83,7 +85,7 @@ class SwiftNetworkingClient {
                     if jsonResult? {
                         self.completionHandler!(jsonResult!)
                     }
-                }
+                }*/
             }
             })
     }
@@ -100,7 +102,7 @@ class SwiftNetworkingClient {
     func encodeAsJSON(data: AnyObject!) -> String? {
         var json = ""
         
-        if let rootObjectArr = data as? AnyObject[] {
+        if let rootObjectArr = data as? [AnyObject] {
             // Array
             println("Found an array")
             json = "\(json)["
@@ -148,7 +150,7 @@ class SwiftNetworkingClient {
         return json
     }
     
-    func onComplete( completionHandler:((AnyObject) -> Void)? ) -> SwiftNetworkingClient {
+    func onComplete( completionHandler:((String) -> Void)? ) -> SwiftNetworkingClient {
         self.completionHandler = completionHandler
         perform()
         return self

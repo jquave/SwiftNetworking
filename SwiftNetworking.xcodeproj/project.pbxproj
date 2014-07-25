@@ -12,6 +12,7 @@
 		021E1B111944F5A400FDC37C /* SwiftNetworkingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021E1B101944F5A400FDC37C /* SwiftNetworkingTests.swift */; };
 		021E1B1B1944F62D00FDC37C /* SwiftNetworkingClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021E1B1A1944F62D00FDC37C /* SwiftNetworkingClient.swift */; };
 		021E1B251944FC8200FDC37C /* SwiftNetworking.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 021E1AFE1944F5A300FDC37C /* SwiftNetworking.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		0222C9AB1983221300D48254 /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0222C9AA1983221300D48254 /* JSON.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +46,7 @@
 		021E1B0F1944F5A400FDC37C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		021E1B101944F5A400FDC37C /* SwiftNetworkingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftNetworkingTests.swift; sourceTree = "<group>"; };
 		021E1B1A1944F62D00FDC37C /* SwiftNetworkingClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftNetworkingClient.swift; sourceTree = "<group>"; };
+		0222C9AA1983221300D48254 /* JSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSON.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 		021E1B001944F5A300FDC37C /* SwiftNetworking */ = {
 			isa = PBXGroup;
 			children = (
+				0222C9AA1983221300D48254 /* JSON.swift */,
 				021E1B031944F5A300FDC37C /* SwiftNetworking.h */,
 				021E1B011944F5A300FDC37C /* Supporting Files */,
 				021E1B1A1944F62D00FDC37C /* SwiftNetworkingClient.swift */,
@@ -221,6 +224,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				021E1B1B1944F62D00FDC37C /* SwiftNetworkingClient.swift in Sources */,
+				0222C9AB1983221300D48254 /* JSON.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
