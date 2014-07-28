@@ -54,4 +54,8 @@ println(parsedMixed["arrayOfStuff"])
 println(parsedMixed["arrayOfStuff"][0])
 println(parsedMixed["dict"])
 println(parsedMixed["dict"]["key"])
+
+// Fail
+println(parsedMixed["invalidKey"])
+println( parsedMixed["invalidKey"][0]["None Of this exists"] )
 ```
