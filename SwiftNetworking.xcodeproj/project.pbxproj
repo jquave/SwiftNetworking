@@ -89,10 +89,9 @@
 		021E1B001944F5A300FDC37C /* SwiftNetworking */ = {
 			isa = PBXGroup;
 			children = (
-				0222C9AA1983221300D48254 /* JSON.swift */,
-				021E1B031944F5A300FDC37C /* SwiftNetworking.h */,
-				021E1B011944F5A300FDC37C /* Supporting Files */,
 				021E1B1A1944F62D00FDC37C /* SwiftNetworkingClient.swift */,
+				0222C9AA1983221300D48254 /* JSON.swift */,
+				021E1B011944F5A300FDC37C /* Supporting Files */,
 			);
 			path = SwiftNetworking;
 			sourceTree = "<group>";
@@ -100,6 +99,7 @@
 		021E1B011944F5A300FDC37C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				021E1B031944F5A300FDC37C /* SwiftNetworking.h */,
 				021E1B021944F5A300FDC37C /* Info.plist */,
 			);
 			name = "Supporting Files";
