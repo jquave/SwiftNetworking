@@ -26,6 +26,8 @@ SwiftNetworkingClient.post("http://localhost:3000/api/register", params: ["usern
 }).onError({error -> Void in
   println("Error!")
 })
+```
+
 
 ### JSON Parsing
 ```swift
@@ -52,3 +54,4 @@ println(parsedMixed["arrayOfStuff"])
 println(parsedMixed["arrayOfStuff"][0])
 println(parsedMixed["dict"])
 println(parsedMixed["dict"]["key"])
+```
