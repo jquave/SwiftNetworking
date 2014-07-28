@@ -133,7 +133,7 @@ public class JSON {
         //self.data = self.json.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false)
     }
 
-    public func asObject() -> JSONVal {
+    public func parse() -> JSONVal {
         var err: NSError? = nil
         println("data length: \(self.data.length)")
         var val = JSONVal(NSJSONSerialization.JSONObjectWithData(self.data, options: nil, error: &err))
