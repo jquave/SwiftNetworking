@@ -26,3 +26,29 @@ SwiftNetworkingClient.post("http://localhost:3000/api/register", params: ["usern
 }).onError({error -> Void in
   println("Error!")
 })
+
+### JSON Parsing
+```swift
+/*
+{
+"key": "value",
+"arrayOfStuff": [
+1,
+2
+],
+"dict": {
+"key": "value",
+"key2": "value2"
+}
+}*/
+let jsonMixed = "{\"key\": \"value\",\"arrayOfStuff\": [1,2],\"dict\": {\"key\": \"value\",\"key2\": \"value2\"}}"
+
+var parsedMixed = JSON(jsonMixed).parse()
+
+
+// Succeed
+println(parsedMixed["key"])
+println(parsedMixed["arrayOfStuff"])
+println(parsedMixed["arrayOfStuff"][0])
+println(parsedMixed["dict"])
+println(parsedMixed["dict"]["key"])

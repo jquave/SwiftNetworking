@@ -29,8 +29,8 @@ class ViewController: UIViewController {
         let jsonMixed = "{\"key\": \"value\",\"arrayOfStuff\": [1,2],\"dict\": {\"key\": \"value\",\"key2\": \"value2\"}}"
 
         var parsedMixed = JSON(jsonMixed).parse()
-        
-        
+
+
         // Succeed
         println(parsedMixed["key"])
         println(parsedMixed["arrayOfStuff"])
