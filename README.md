@@ -6,15 +6,17 @@ Some helpers for making API calls in Swift
 
 ## Usage
 
-#### `GET` Request
+#### `GET` Request With JSON Parsing
 
 ```swift
-SwiftNetworkingClient.get("http://example.com").onComplete({result -> Void in
-  if let dict = result as? NSDictionary {
-    self.delegate?.didRecieveAPIResults(dict)
-  }
+
+SwiftNetworkingClient.get(url).onComplete({result -> Void in
+    var parsedSongs = parseJSON(result)["results"]
+    println(parsedSongs)
+    
+    
 }).onError({error -> Void in
-  println("ERROR RECEIVED")
+    println("ERROR RECEIVED")
 })
 
 ```

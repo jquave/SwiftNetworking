@@ -44,7 +44,7 @@ class SwiftNetworkingClient {
         return newClient
     }
     
-    func perform() {
+    public func go() {
         let url = NSURL(string: path)
         var request = NSMutableURLRequest(URL: url)
         
@@ -76,7 +76,7 @@ class SwiftNetworkingClient {
     
     func onComplete( completionHandler:((String) -> Void)? ) -> SwiftNetworkingClient {
         self.completionHandler = completionHandler
-        perform()
+        //perform()
         return self
     }
     

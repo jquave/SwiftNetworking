@@ -8,7 +8,57 @@
 
 import Foundation
 
+func parseJSON(data: NSData) -> JSONVal {
+    return JSON(data).parse()
+}
+
+func parseJSON(str: String) -> JSONVal {
+    return JSON(str).parse()
+}
+
 public enum JSONVal : Printable {
+    
+    // Generator protocol, use for `for x in y`
+//    typealias Element
+    /*public func next() -> JSONVal? {
+        return self
+    }
+    typealias GeneratorType = JSONVal
+    */
+    
+    /*
+protocol Sequence {
+typealias GeneratorType : Generator
+func generate() -> GeneratorType
+}
+*/
+    /*typealias GeneratorType = JSONVal
+    func generate() -> GeneratorType {
+        return GeneratorType(0)
+    }
+    func next() -> JSONVal {
+        return JSONVal("hi")
+    }
+    */
+    
+    public func val() -> Any {
+        switch self {
+        case .Dictionary(let dict):
+            return dict
+        case .JSONDouble(let d):
+            return d
+        case .JSONInt(let i):
+            return i
+        case .JSONArray(let arr):
+            return arr
+        case .JSONStr(let str):
+            return str
+        case .JSONBool(let jbool):
+            return jbool
+        case .Null:
+            return "Null"
+        }
+    }
     
     case Dictionary([String : JSONVal])
     case JSONDouble(Double)
@@ -18,16 +68,45 @@ public enum JSONVal : Printable {
     case JSONBool(Bool)
     case Null
     
+    
+    // Pretty prints for Dictionary and Array
+    
+    func pp(data : [String : JSONVal]) -> String {
+        return "DICT"
+    }
+    
+    func pp(data : [JSONVal]) -> String {
+        var str = "[\n"
+        var indentation = "  "
+        for x : JSONVal in data {
+            str += "\(indentation)\(x)\n"
+        }
+        return str
+    }
+    
     public var description: String {
         switch self {
         case .Dictionary(let dict):
-            return dict.description
+            var str = "{\n"
+            var indent = "  "
+            for (key,val) in dict {
+                str += "\(indent)\(key):  \(val)\n"
+            }
+            return "JSONDictionary \(str)"
         case .JSONDouble(let d):
             return "\(d)"
         case .JSONInt(let i):
             return "\(i)"
         case .JSONArray(let arr):
-            return arr.description
+            var str = "[\n"
+            var num = 0
+            var indent = "  "
+            for object in arr {
+                str += "[\(num)]\(indent)\(object.description)\n"
+                num++
+            }
+            str += "]"
+            return "JSONArray [\(arr.count)]: \(str)"
         case .JSONStr(let str):
             return str
         case .JSONBool(let jbool):
@@ -62,14 +141,8 @@ public enum JSONVal : Printable {
     }
     
     init(_ json: Int) {
-        println("JSONInt")
         self = .JSONInt(json)
     }
-    /*
-    init(_ json: [String : JSONVal]) {
-        println("JSONVal NSDictionary")
-        self = .Dictionary(json)
-    }*/
     
     init(_ json: AnyObject) {
 
@@ -120,14 +193,11 @@ public class JSON {
     public var data: NSData
     
     init(_ json: String) {
-        println("    init(_ json: String) {")
-        println("JSON already a string")
         self.json = json
         self.data = json.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false)!
     }
     
     init(_ data: NSData) {
-        println("    init(_ data: NSData) {")
         self.json = ""
         self.data = data
         //self.data = self.json.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false)
@@ -135,7 +205,6 @@ public class JSON {
 
     public func parse() -> JSONVal {
         var err: NSError? = nil
-        println("data length: \(self.data.length)")
         var val = JSONVal(NSJSONSerialization.JSONObjectWithData(self.data, options: nil, error: &err))
         
         return val
@@ -147,7 +216,6 @@ public class JSON {
         
         if let rootObjectArr = data as? [AnyObject] {
             // Array
-            println("Found an array")
             json = "\(json)["
             for embeddedObject: AnyObject in rootObjectArr {
                 var encodedEmbeddedObject = encodeAsJSON(embeddedObject)

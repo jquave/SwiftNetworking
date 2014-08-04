@@ -7,13 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		02152B02198FE62500564F78 /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02152B00198FE62500564F78 /* JSON.swift */; };
+		02152B03198FE62500564F78 /* SwiftNetworkingClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02152B01198FE62500564F78 /* SwiftNetworkingClient.swift */; };
 		0237859A1985DC470093784F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023785991985DC470093784F /* AppDelegate.swift */; };
 		0237859C1985DC470093784F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0237859B1985DC470093784F /* ViewController.swift */; };
 		0237859F1985DC470093784F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0237859D1985DC470093784F /* Main.storyboard */; };
 		023785A11985DC470093784F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 023785A01985DC470093784F /* Images.xcassets */; };
 		023785AD1985DC470093784F /* SwiftNetworkingExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023785AC1985DC470093784F /* SwiftNetworkingExampleTests.swift */; };
-		023785B91985DC680093784F /* SwiftNetworkingClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023785B71985DC680093784F /* SwiftNetworkingClient.swift */; };
-		023785BA1985DC680093784F /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023785B81985DC680093784F /* JSON.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,6 +27,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		02152B00198FE62500564F78 /* JSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JSON.swift; path = ../../SwiftNetworking/Classes/JSON.swift; sourceTree = "<group>"; };
+		02152B01198FE62500564F78 /* SwiftNetworkingClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwiftNetworkingClient.swift; path = ../../SwiftNetworking/Classes/SwiftNetworkingClient.swift; sourceTree = "<group>"; };
 		023785941985DC470093784F /* SwiftNetworkingExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftNetworkingExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		023785981985DC470093784F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		023785991985DC470093784F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -36,8 +38,6 @@
 		023785A61985DC470093784F /* SwiftNetworkingExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftNetworkingExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		023785AB1985DC470093784F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		023785AC1985DC470093784F /* SwiftNetworkingExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftNetworkingExampleTests.swift; sourceTree = "<group>"; };
-		023785B71985DC680093784F /* SwiftNetworkingClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwiftNetworkingClient.swift; path = ../../../SwiftNetworking/SwiftNetworkingClient.swift; sourceTree = "<group>"; };
-		023785B81985DC680093784F /* JSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JSON.swift; path = ../../../SwiftNetworking/JSON.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,8 +117,8 @@
 		023785B61985DC600093784F /* SwiftNetworking */ = {
 			isa = PBXGroup;
 			children = (
-				023785B71985DC680093784F /* SwiftNetworkingClient.swift */,
-				023785B81985DC680093784F /* JSON.swift */,
+				02152B00198FE62500564F78 /* JSON.swift */,
+				02152B01198FE62500564F78 /* SwiftNetworkingClient.swift */,
 			);
 			name = SwiftNetworking;
 			sourceTree = "<group>";
@@ -222,10 +222,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				02152B02198FE62500564F78 /* JSON.swift in Sources */,
 				0237859C1985DC470093784F /* ViewController.swift in Sources */,
+				02152B03198FE62500564F78 /* SwiftNetworkingClient.swift in Sources */,
 				0237859A1985DC470093784F /* AppDelegate.swift in Sources */,
-				023785B91985DC680093784F /* SwiftNetworkingClient.swift in Sources */,
-				023785BA1985DC680093784F /* JSON.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -411,6 +411,7 @@
 				023785B21985DC470093784F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		023785B31985DC470093784F /* Build configuration list for PBXNativeTarget "SwiftNetworkingExampleTests" */ = {
 			isa = XCConfigurationList;
@@ -419,6 +420,7 @@
 				023785B51985DC470093784F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
